@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Serviços de elétrica residencial de qualidade, com experiência e profissionalismo.">
+    <title>Serviços de Elétrica Residencial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Serviços de Elétrica Residencial</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#tabela">Tabela de Preços</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <h2>Bem-vindo ao nosso serviço de elétrica residencial!</h2>
+            <p>Com vasta experiência em elétrica predial, oferecemos serviços rápidos, seguros e eficientes.</p>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <div class="container">
+            <h2>Serviços Oferecidos</h2>
+            <ul>
+                <li>Instalações elétricas</li>
+                <li>Manutenção de sistemas elétricos</li>
+                <li>Troca de fiação e interruptores</li>
+                <li>Instalação de iluminação</li>
+                <li>Verificação e reparos em circuitos elétricos</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="container">
+            <h2>Sobre o Profissional</h2>
+            <p>Meu nome é Francisco Giovani Bettim Dutra Dorscheidt, e sou especialista em elétrica predial, com vasta experiência na instalação e manutenção de sistemas elétricos. Meu trabalho é focado em qualidade, segurança e rapidez, atendendo a todas as necessidades dos meus clientes de maneira eficiente.</p>
+            <p>Além disso, estou sempre em busca de atualização e aperfeiçoamento técnico para oferecer o melhor serviço, garantindo a satisfação e confiança de todos os clientes.</p>
+        </div>
+    </section>
+
+    <section id="tabela">
+        <div class="container">
+            <h2>Tabela de Preços - Serviços de Elétrica Residencial</h2>
+            <p>Prezado Cliente,</p>
+            <p>Segue nossa tabela de preços para serviços de elétrica residencial. Os valores podem variar conforme a complexidade do serviço e materiais utilizados. Para um orçamento preciso, entre em contato conosco.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Serviço</th>
+                        <th>Preço Médio (R$)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Instalação Elétrica Nova</td>
+                        <td>40 a 100 por m²</td>
+                    </tr>
+                    <tr>
+                        <td>Reforma de Instalação</td>
+                        <td>15 a 30 por m²</td>
+                    </tr>
+                    <tr>
+                        <td>Instalação de Tomada/Interruptor</td>
+                        <td>60 a 120 por unidade</td>
+                    </tr>
+                    <tr>
+                        <td>Instalação de Chuveiro Elétrico</td>
+                        <td>108 a 180</td>
+                    </tr>
+                    <tr>
+                        <td>Instalação de Luminária</td>
+                        <td>110 a 300</td>
+                    </tr>
+                    <tr>
+                        <td>Reparo de Curto-Circuito</td>
+                        <td>250 a 600</td>
+                    </tr>
+                    <tr>
+                        <td>Manutenção de Quadro de Disjuntores</td>
+                        <td>400 a 800</td>
+                    </tr>
+                    <tr>
+                        <td>Serviços de Urgência (Fora do Horário Comercial)</td>
+                        <td>Acréscimo de 30% a 50%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Observações:</strong></p>
+            <ul>
+                <li>Os valores podem sofrer alterações conforme a necessidade do cliente.</li>
+                <li>Materiais não inclusos nos valores apresentados.</li>
+                <li>Para um orçamento detalhado, agende uma visita técnica.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="contato">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <form action="https://formspree.io/f/mzzepepa" method="POST">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" required></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Francisco Giovani Bettim Dutra Dorscheidt | Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault();  // Impede o envio padrão do formulário
+            const form = event.target;
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: "POST",
+                body: formData,
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Obrigado pelo contato! Sua mensagem foi enviada.");
+                    form.reset();
+                } else {
+                    alert("Ocorreu um erro. Tente novamente.");
+                }
+            })
+            .catch(error => {
+                alert("Erro de rede. Tente novamente.");
+            });
+        });
+    </script>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
